@@ -226,7 +226,7 @@ int main(int argc, char const *argv[]) {
           gallium_oxide, temperature, 81e-3 * units::eV, 3.0e2 * units::eV / pow(units::nm, 2))};
 
   double time_step = 1e-16 * units::s;
-  double all_time = 1e-11 * units::s;
+  double all_time = 1e-9 * units::s;
 
   // print info on stdout
   std::cout << "ensemble size:    " << ensemble_size << "\n";
@@ -261,8 +261,8 @@ int main(int argc, char const *argv[]) {
     }
   }
   Vec3 std_velocity = (average_velocity2 - average_velocity * average_velocity).sqrt();
-  std::cout << "Average velocity: " << average_velocity << '\n';
-  std::cout << "             std: " << std_velocity << '\n';
+  std::cout << "Average velocity: " << average_velocity * units::s / units::m << '\n';
+  std::cout << "             std: " << std_velocity * units::s / units::m << '\n';
   std::cout << "Scattering rates: " << scattering_rates << '\n';
   std::cout << "           Total: " << sum(scattering_rates) << '\n';
   return 0;
