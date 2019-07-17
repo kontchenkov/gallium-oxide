@@ -162,11 +162,11 @@ template <typename T> T sum(std::vector<T> t) {
 int main(int argc, char const *argv[]) {
   if (argc != 4) {
     std::cout << "Invalid number of arguments\n";
-    std::cout << "Usage: " << argv[0] << " <ansemble size> <temperature> <electric field>\n";
+    std::cout << "Usage: " << argv[0] << " <ensemble size> <temperature> <electric field>\n";
     return 1;
   }
 
-  size_t ansemble_size = parse<int>(argv[1]);
+  size_t ensemble_size = parse<int>(argv[1]);
   double temperature = parse<double>(argv[2]) * units::K;
   Vec3 electric_field{parse<double>(argv[3]) * units::V / units::m, 0, 0};
   Vec3 magnetic_field{0, 0, 0};
@@ -229,7 +229,7 @@ int main(int argc, char const *argv[]) {
   double all_time = 1e-11 * units::s;
 
   // print info on stdout
-  std::cout << "Ansemble size:    " << ansemble_size << "\n";
+  std::cout << "ensemble size:    " << ensemble_size << "\n";
   std::cout << "Time step:        " << time_step / units::s << " s\n";
   std::cout << "Simulation time:  " << all_time / units::s << " s\n";
   std::cout << "Temperature:      " << temperature / units::K << " K\n";
@@ -246,7 +246,7 @@ int main(int argc, char const *argv[]) {
                           magnetic_field,
                           time_step,
                           all_time,
-                          ansemble_size,
+                          ensemble_size,
                           DumpFlags(DumpFlags::none));
   Vec3 average_velocity;
   Vec3 average_velocity2;
