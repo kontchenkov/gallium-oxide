@@ -1,0 +1,4 @@
+[wrap-git]
+directory = probable
+url = https://github.com/citrux/probable.git
+revision = head
