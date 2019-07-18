@@ -1,0 +1,38 @@
+ensemble size:    100
+Time step:        1e-16 s
+Simulation time:  1e-09 s
+Temperature:      300 K
+Electric field:   { 9e+06, 0, 0 } V/m
+Magnetic field:   { 0, 0, 0 } T
+Scattering mechanisms:
+1: AcousticScattering 0
+2: ImpurityScattering 0
+3: PolarOpticalAbsorptionScattering -0.025
+4: PolarOpticalEmissionScattering 0.025
+5: PolarOpticalAbsorptionScattering -0.029
+6: PolarOpticalEmissionScattering 0.029
+7: PolarOpticalAbsorptionScattering -0.035
+8: PolarOpticalEmissionScattering 0.035
+9: PolarOpticalAbsorptionScattering -0.043
+10: PolarOpticalEmissionScattering 0.043
+11: PolarOpticalAbsorptionScattering -0.05
+12: PolarOpticalEmissionScattering 0.05
+13: PolarOpticalAbsorptionScattering -0.07
+14: PolarOpticalEmissionScattering 0.07
+15: PolarOpticalAbsorptionScattering -0.08
+16: PolarOpticalEmissionScattering 0.08
+17: PolarOpticalAbsorptionScattering -0.09
+18: PolarOpticalEmissionScattering 0.09
+19: PolarOpticalAbsorptionScattering -0.014
+20: PolarOpticalEmissionScattering 0.014
+21: PolarOpticalAbsorptionScattering -0.037
+22: PolarOpticalEmissionScattering 0.037
+23: PolarOpticalAbsorptionScattering -0.06
+24: PolarOpticalEmissionScattering 0.06
+25: PolarOpticalAbsorptionScattering -0.081
+26: PolarOpticalEmissionScattering 0.081
+Average velocity: { -26327.1, -27.7819, 90.5058 }
+             std: { 398.455, 387.404, 414.421 }
+Scattering rates: [4.06112e+12, 7.84512e+13, 2.05914e+13, 2.21678e+13, 8.40309e+12, 9.12252e+12, 4.5539e+11, 4.9788e+11, 1.2066e+12, 1.35409e+12, 5.43591e+12, 6.18899e+12, 2.80672e+12, 3.32943e+12, 7.2875e+11, 8.8206e+11, 4.3845e+11, 5.4464e+11, 5.7839e+11, 6.0285e+11, 6.0421e+12, 6.68021e+12, 3.80703e+12, 4.3982e+12, 6.4194e+11, 7.7697e+11]
+
+           Total: 1.90194e+14
