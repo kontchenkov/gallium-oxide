@@ -225,8 +225,8 @@ int main(int argc, char const *argv[]) {
       new PolarOpticalEmissionScattering(
           gallium_oxide, temperature, 81e-3 * units::eV, 3.0e2 * units::eV / pow(units::nm, 2))};
 
-  double time_step = 1e-16 * units::s;
-  double all_time = 1e-9 * units::s;
+  double time_step = 5e-16 * units::s;
+  double all_time = 1e-8 * units::s;
 
   // print info on stdout
   std::cout << "ensemble size:    " << ensemble_size << "\n";
@@ -247,7 +247,7 @@ int main(int argc, char const *argv[]) {
                           time_step,
                           all_time,
                           ensemble_size,
-                          DumpFlags(DumpFlags::none));
+                          DumpFlags(DumpFlags::time | DumpFlags::energy | DumpFlags::scattering | DumpFlags::on_scatterings));
   Vec3 average_velocity;
   Vec3 average_velocity2;
   std::vector<double> scattering_rates(scattering_mechanisms.size(), 0);
@@ -259,6 +259,10 @@ int main(int argc, char const *argv[]) {
       scattering_rates[j] +=
           (results[i].scattering_count[j] / all_time * units::s - scattering_rates[j]) / (i + 1);
     }
+    std::stringstream ss;
+    ss << std::setw(6) << std::setfill('0') << i << ".dat";
+    std::ofstream f(ss.str().c_str());
+    f << results[i];
   }
   Vec3 std_velocity = (average_velocity2 - average_velocity * average_velocity).sqrt();
   std::cout << "Average velocity: " << average_velocity * units::s / units::m << '\n';
